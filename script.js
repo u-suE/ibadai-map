@@ -55,6 +55,13 @@ currentCircle = L.circle([lat, lng], {
 map.setView([lat, lng], 17);
 }
 
+function getLocation() {
+  navigator.geolocation.getCurrentPosition(
+    showCurrentPosition,
+    showPositionError
+  );
+}
+
 function showPositionError(error) {
 console.error('位置情報の取得に失敗:', error);
 
